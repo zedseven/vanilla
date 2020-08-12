@@ -1,0 +1,3 @@
+types = [
+    { file_name = "vehicles.meta", parent_tags = [ "InitDatas", "txdRelationships" ] }
+]

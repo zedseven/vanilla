@@ -3,7 +3,7 @@ use std::fs::File;
 use std::io::BufReader;
 use std::io::Read;
 use std::path::Path;
-use xmltree::{Element, XMLNode};
+use xmltree::{ Element, XMLNode };
 use serde::Deserialize;
 use std::borrow::Cow;
 use xml::EmitterConfig;

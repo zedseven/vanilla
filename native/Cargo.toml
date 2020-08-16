@@ -21,3 +21,4 @@ toml = "0.5.0"
 serde = { version = "1.0", features = ["derive"] }
 xml-rs = "0.8"
 xmltree = "0.10"
+#path-slash = "0.1.3"

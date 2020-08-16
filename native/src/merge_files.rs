@@ -16,7 +16,7 @@ pub struct MergeableFile {
 
 #[derive(Deserialize, Debug)]
 struct TypesVec {
-	types: Vec<MergeableFile>,
+	meta_file_types: Vec<MergeableFile>,
 }
 
 #[derive(Error, Debug)]
@@ -58,7 +58,7 @@ pub fn init() -> Result<Vec<MergeableFile>, MergeError> {
 	config_buf.read_to_string(&mut contents)?;
 	let config_value: TypesVec = toml::from_str(&*contents)?;
 
-	return Ok(config_value.types);
+	return Ok(config_value.meta_file_types);
 }
 
 pub fn merge(

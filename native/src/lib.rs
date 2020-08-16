@@ -10,10 +10,7 @@ const VERSION_MID: u8 = 1;
 const VERSION_MIN: u8 = 0;
 
 fn version(mut cx: FunctionContext) -> JsResult<JsString> {
-	Ok(cx.string(format!(
-		"Vanilla version: v{}.{}.{}",
-		VERSION_MAX, VERSION_MID, VERSION_MIN
-	)))
+	Ok(cx.string(format!("{}.{}.{}", VERSION_MAX, VERSION_MID, VERSION_MIN)))
 }
 
 fn vanilla(mut cx: FunctionContext) -> JsResult<JsString> {
@@ -61,6 +58,7 @@ fn merge_files(mut cx: FunctionContext) -> JsResult<JsBoolean> {
 		out_path.as_str(),
 	);
 	if merge_res.is_err() {
+		eprintln!("{:?}", merge_res);
 		return Ok(cx.boolean(false));
 	}
 	return Ok(cx.boolean(true));
